@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Heading from "./components/heading/Heading"
+import Body from "./components/body/Body"
+import GifContainer from "./components/gifContainer/GifContainer"
+
 
 function App() {
+
+  // setInterval(
+  //   function () {
+  //     var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  //     var myApp  = document.getElementById("myApp");
+  //     myApp.style.backgroundColor = "#"+randomColor;
+  //   },1000);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="myApp" className="App">
+    <div id="mainWrapper">
+    <Heading />
+    <Body />
+    </div>
+    <GifContainer />
     </div>
   );
 }
