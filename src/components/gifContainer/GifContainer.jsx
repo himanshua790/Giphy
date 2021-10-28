@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./gifContainer.scss";
-import Gifs from "../Api"
+import Gifs from "../Api";
 
-// const api = Api();
-// console.log(api)
-
-// console.log(api)
-export default function GifContainer() {
-
+export default function GifContainer({ search }) {
+  useEffect(() => {
+    console.log("updetd:L", search);
+    //use api here
+  }, [search]);
   return (
     <div className="container">
-      <div className="gifHolder"><Gifs/></div>
+      <div> Hello {search}</div>
+      <div className="gifHolder">
+        <Gifs search={search} />
+      </div>
     </div>
   );
 }

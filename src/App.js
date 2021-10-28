@@ -1,26 +1,18 @@
-import React from 'react';
-import './App.css';
-import Heading from "./components/heading/Heading"
-import Body from "./components/body/Body"
-import GifContainer from "./components/gifContainer/GifContainer"
-
+import React, { useState } from "react";
+import "./App.css";
+import Heading from "./components/heading/Heading";
+import Body from "./components/body/Body";
+import GifContainer from "./components/gifContainer/GifContainer";
 
 function App() {
-
-  // setInterval(
-  //   function () {
-  //     var randomColor = Math.floor(Math.random()*16777215).toString(16);
-  //     var myApp  = document.getElementById("myApp");
-  //     myApp.style.backgroundColor = "#"+randomColor;
-  //   },1000);
-
+  const [search, setSearch] = useState("");
   return (
     <div id="myApp" className="App">
-    <div id="mainWrapper">
-    <Heading />
-    <Body />
-    </div>
-    <GifContainer />
+      <div id="mainWrapper">
+        <Heading />
+        <Body search= {search} setSearch={setSearch}/>
+      </div>
+        <GifContainer search={search}/>
     </div>
   );
 }
